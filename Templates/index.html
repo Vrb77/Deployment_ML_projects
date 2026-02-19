@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Loan Status Prediction</title>
+
+  <link href='https://fonts.googleapis.com/css?family=Pacifico' rel='stylesheet'>
+  <link href='https://fonts.googleapis.com/css?family=Arimo' rel='stylesheet'>
+  <link href='https://fonts.googleapis.com/css?family=Hind:300' rel='stylesheet'>
+  <link href='https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300' rel='stylesheet'>
+</head>
+
+<body>
+ <div class="login">
+    <h1>Loan Status Prediction Model</h1>
+
+    <!-- Form -->
+    <form action="{{ url_for('predict') }}" method="post">
+
+        <!-- ========== NUMBER INPUTS ========== -->
+
+        <label for="Age">Age:</label>
+        <input type="number" name="Age" placeholder="Enter Age" min="18" required>
+
+        <label for="Income">Income:</label>
+        <input type="number" name="Income" placeholder="Enter Income" step="0.01" required>
+
+        <label for="Employee_Length">Employee Length (years):</label>
+        <input type="number" name="Employee_Length" placeholder="Enter Employee Length" step="0.1" required>
+
+        <label for="Loan_Amount">Loan Amount:</label>
+        <input type="number" name="Loan_Amount" placeholder="Enter Loan Amount" step="0.01" required>
+
+        <label for="Interest_Rate">Interest Rate (%):</label>
+        <input type="number" name="Interest_Rate" placeholder="Enter Interest Rate" step="0.01" required>
+
+        <label for="Percent_Income">Percent Income:</label>
+        <input type="number" name="Percent_Income" placeholder="Enter Percent Income" step="0.01" required>
+
+        <label for="Credit_History_Length">Credit History Length (years):</label>
+        <input type="number" name="Credit_History_Length" placeholder="Enter Credit History Length" step="0.1" required>
+
+
+        <!-- ========== DROPDOWNS ========== -->
+
+        <!-- Home Ownership -->
+        <label for="Home_Ownership">Home Ownership:</label>
+        <select name="Home_Ownership" required>
+            <option value="">--Please choose an option--</option>
+            <option value="RENT">RENT</option>
+            <option value="OWN">OWN</option>
+            <option value="MORTGAGE">MORTGAGE</option>
+            <option value="OTHER">OTHER</option>
+        </select>
+
+        <!-- Loan Intent -->
+        <label for="Loan_Intent">Loan Intent:</label>
+        <select name="Loan_Intent" required>
+            <option value="">--Please choose an option--</option>
+            <option value="EDUCATION">EDUCATION</option>
+            <option value="MEDICAL">MEDICAL</option>
+            <option value="PERSONAL">PERSONAL</option>
+            <option value="VENTURE">VENTURE</option>
+            <option value="DEBTCONSOLIDATION">DEBT CONSOLIDATION</option>
+            <option value="HOMEIMPROVEMENT">HOME IMPROVEMENT</option>
+        </select>
+
+        <!-- Loan Grade -->
+        <label for="Loan_Grade">Loan Grade:</label>
+        <select name="Loan_Grade" required>
+            <option value="">--Please choose an option--</option>
+            <option value="A">A</option>
+            <option value="B">B</option>
+            <option value="C">C</option>
+            <option value="D">D</option>
+            <option value="E">E</option>
+            <option value="F">F</option>
+            <option value="G">G</option>
+        </select>
+
+        <!-- Credit Default -->
+        <label for="Credit_Default">Credit Person Default On File:</label>
+        <select name="Credit_Default" required>
+            <option value="">--Please choose an option--</option>
+            <option value="N">N</option>
+            <option value="Y">Y</option>
+        </select>
+
+        <br><br>
+        <button type="submit" class="btn btn-primary btn-block btn-large">Predict</button>
+
+    </form>
+
+    <br>
+    {{ prediction_text }}
+
+ </div>
+</body>
+</html>
+
