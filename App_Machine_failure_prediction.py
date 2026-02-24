@@ -12,7 +12,7 @@ st.title("Machine Failure Prediction Project")
 st.subheader("By Vaishnavi Badade")
 
 # Load the pipeline (data cleaning, preprocessing) and model
-pre = joblib.load("pre.joblib")
+pre = joblib.load("machine_failure_pre.joblib")
 model = joblib.load("machine_failure_model.joblib")
 
 
@@ -29,7 +29,7 @@ OSF = st.number_input("OSF", min_value=0, max_value=1, step=1)
 RNF = st.number_input("RNF", min_value=0, max_value=1, step=1)
 
 # Include a button. After providing all the inputs, user will click on the button. The button should provide the necessary predictions
-submit = st.button("Predict Loan Status")
+submit = st.button("Predict Machine fail or not")
 
 if submit:
     data = {
