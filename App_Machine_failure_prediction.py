@@ -38,6 +38,7 @@ if submit:
         'Process_temperature_K':[Process_temperature_K],
         'Rotational_speed_rpm':[Rotational_speed_rpm],
         'Torque_Nm':[Torque_Nm],
+        'Tool_wear_min': [Tool_wear_min],
         'TWF':[TWF],
         'HDF':[HDF],
         'PWF':[PWF],
