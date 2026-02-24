@@ -52,10 +52,10 @@ if submit:
     # predictions
     preds = model.predict(xnew_pre)
     if preds[0]==1:
-        op = 'Machine not fail'
-        # st.subheader('Loan Status is Approved')
+        op = 'Machine will fail'
+        
     else:
-        op = 'Machine fail'
-        # st.subheader('Loan Status is Not Approved')
+        op = 'Machine will not fail'
+       
     
     st.subheader(op)
