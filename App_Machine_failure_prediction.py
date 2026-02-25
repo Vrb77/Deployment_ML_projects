@@ -2,8 +2,11 @@ import streamlit as st
 import joblib
 import pandas as pd
 
+# Load the external CSS
+css_path = pathlib.Path("Templates/style.css")
+load_css(css_path)
 # set the tab title
-st.set_page_config("Prediction of Machine Failure")
+st.set_page_config("📈 Prediction of Machine Failure 🛠️")
 
 # Set the page title
 st.title("Machine Failure Prediction Project")
@@ -29,7 +32,7 @@ OSF = st.number_input("OSF", min_value=0, max_value=1, step=1)
 RNF = st.number_input("RNF", min_value=0, max_value=1, step=1)
 
 # Include a button. After providing all the inputs, user will click on the button. The button should provide the necessary predictions
-submit = st.button("Predict Machine fail or not")
+submit = st.button("Predict Machine fail or not", key="green")
 
 if submit:
     data = {
@@ -53,9 +56,12 @@ if submit:
     preds = model.predict(xnew_pre)
     if preds[0]==1:
         op = 'Machine will fail'
+        st.subheader(op, key="styledtextfail")
         
     else:
         op = 'Machine will not fail'
+        st.subheader(op, key="styledtextnotfail")
        
     
-    st.subheader(op)
+
+    
