@@ -11,10 +11,10 @@ def load_css(file_path):
 css_path = pathlib.Path("Templates/style.css")
 load_css(css_path)
 # set the tab title
-st.set_page_config("📈 Prediction of Machine Failure 🛠️")
+st.set_page_config("Prediction of Machine Failure")
 
 # Set the page title
-st.title("Machine Failure Prediction Project")
+st.title("📈Machine Failure Prediction Project 🛠️")
 
 # Set header
 st.subheader("By Vaishnavi Badade")
@@ -70,5 +70,6 @@ if submit:
     
 
     
+
 
 
